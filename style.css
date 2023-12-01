@@ -1,0 +1,149 @@
+* {
+    margin: 0%;
+    /* é a margem da tela do navegador*/
+    padding: 0%;
+    /*é a margem de dentro da tela*/
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+    /* veio do google fonts - na seleção da fonte e depois a parte do css, onde ele já deixa pronto pra copiar, loogo abaixo do link do html . */
+}
+
+.logo-mario {
+    width: 300px;
+}
+
+.imagem-mario-luigi {
+    height: 600px;
+}
+
+body {
+    display: flex;
+    /*pegou tudo que estava amontoado e colocou uma do lado da outra.*/
+    height: 100vh;
+    /*colocou como altura do corpo da página 100 por cento do viewport height */
+    align-items: center;
+    /*alinhou tudo que havia dentro do body ao centro*/
+    justify-content: space-evenly;
+    /*criou um espaço entre as caixas do body*/
+}
+
+.caixa-principal {
+    width: 40%;
+
+}
+
+.caixa-video-mario {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    /*posiciona a ordem do objeto na tela.*/
+    height: 100%;
+    width: 100%;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+    /* " min- h ou w " coloca o minimo possivel do tamanho que puder ocupar da tela toda */
+
+}
+
+.mascara-video {
+    height: 100%;
+    width: 100%;
+    /* essa classe da o efeito degrade escuro por cima do video */
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+p {
+    color: white;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+button {
+    height: 40px;
+    width: 200px;
+    background: #c51111;
+    border: none;
+    /* a borda do botão, colocou como sem borda */
+    border-radius: 5px;
+    /* aqui ele cria o arredondamento da borda do botão */
+    color: #fff;
+    /* cor da fonte do botão */
+    margin-top: 20px;
+    /* distância dê cima do botão para o próximo objeto */
+    cursor: pointer;
+    /* tipo de mãozinha que fica no cursor, quando passa por cima do botão*/
+}
+
+.fale-conosco {
+    background: #fff;
+    display: flex;
+    /* ele organiza os itens um do lado do outro */
+    flex-direction: column;
+    /* o flex assume a posição de coluna */
+    padding: 20px;
+    /* cria uma borda interna separando o lado da parede de fora com a parede dos itens de dentro */
+    border-radius: 5px;
+    /* arredondou a borda do formulário */
+    gap: 20px;
+    /* esse gap cria um espaço entre todos os itens de uma vez só, ao invés de fazer uma por uma com o 
+    margin-top */
+    position: fixed;
+    /* aqui eu fixei a posição do form, para depois poder arrastá-lo para a esquerda. */
+    left: -320px;
+    /* aqui eu arrastei o form, para esquerda em -320 px, para aparecer apenas a ponta dele na página. */
+    transition: left 1s linear;
+    /* esse atributo, faz uma transição toda vez que for acionado o left desse form, com o tempo de 1 segundo
+    e de forma linear */
+    z-index: 4;
+}
+
+input {
+    height: 40px;
+    /* altura das caixinhas */
+    border-radius: 3px;
+    /* arredondamento das bordas das caixinhas */
+    border: 1px solid gray;
+    /* borda da caixinha ficou definida com 1px de grossura, do tipo solida = continua, e da cor cinza */
+    padding-left: 10px;
+    /* aqui eu criei uma borda interna, distanciando o texto do canto esquerdo para o meio em 10px */
+    outline-color: orange;
+    /* aqui é a cor da linha que aparece do input, quando clica nela */
+
+    /* para não ficar pedindo senha, quando clica na caixinha do input, tem que colocar o type que ela é 
+    no html do formulário, na parte input depois do placeholder */
+}
+
+textarea {
+    height: 100px;
+    /*aumentamos a altura da caixinha para ficar maior */
+    width: 300px;
+    /* aumentamos a largura também para ficar tudo proporcional */
+    border-radius: 3px;
+    border: 1px solid gray;
+    /* esse padrão é larguda da linha, tipo de traçado, cor */
+    padding: 10px;
+    /* aqui a borda ficou de 10px de todos os lados */
+    outline-color: orange;
+
+    /* aqui não precisou alterar o tipo no textarea, por que já é uma caixinha de texto */
+}
+
+.mascara-form {
+
+    visibility: hidden;
+    /* essa propriedade deixa a mascara visivel ou não, quando ela começa hidden, 
+    ela já inicia escondida */
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    z-index: 3;
+}

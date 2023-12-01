@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <title> Desafio Super Mario # 1 </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- esse link abaixo, é a fonte exportada do site, do google fonts, onde você copia o link especifico da sua fonte escolhida e depois cola aqui no head do hmtl -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700&family=Pacifico&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="caixa-video-mario">
+        <video src="video.mp4" autoplay muted loop></video>
+        <div class="mascara-video"></div>
+    </div>
+
+    <div class="caixa-principal">
+        <img class="logo-mario" src="./logo.png" alt="logomario">
+        <p>Encanadores Mario & Luigi - Resolvendo Seus Problemas Com Estilo!</p>
+        <p>Você já se encontrou em uma situação de emergência com encanamento? Vazamentos inesperados, canos entupidos
+            ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia! Apresentamos a
+            vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luigi!</p>
+        <button onclick="cliqueiNobotao()"> Fale Conosco! </button>
+        <!-- toda vez que eu for programar um botão eu tenho que chamar um evento, que nesse caso seria o evento "onclick", que faz referência quando o botão é pressionado, chamando a função criada no javascript, fazendo a relação direta, porque o html e o java nesse caso estão no mesmo arquivo, se estivessem separados daria erro -->
+    </div>
+
+    <img class="imagem-mario-luigi" src="./mario.png" alt="fotomarioeluigi">
+
+    <form class="fale-conosco" action="https://formsubmit.co/kiyon65742@notedns.com" method="POST">
+
+        <!-- aqui é o formulário que vai receber os inputs, textarea e button, ganhando seu estilo no css -->
+        <strong> Fale Conosco! </strong>
+        <input placeholder="Seu Nome" type="text" name="name">
+        <!-- placeholder seria esse nome que fica aperecendo dentro da caixa enquanto não digitamos o assunto -->
+        <input placeholder="Telefone" type="tel" name="phone">
+        <textarea placeholder="Digite aqui o seu problema!" name="message"></textarea>
+        <!--o textarea é um input maior, onde a gente consegue armazenar muito mais informação, o input, seria apenas pouco texto. -->
+        <button onclick="sumirFormulario()"> Enviar Solicitação </button>
+
+    </form>
+
+    <!--<hr>
+    <p>
+
+        <img src="./logoinsta.jpg" alt="loginsta" width="50px">
+        <a href="instagram://user?username=ricardojsvianna" target="_blank">Instagram Mario</a>
+
+        <img src="./logoface.jpg" alt="logface" width="50px">
+        <a href="facebook://user?username=ricardovianna" target="_blank"> Facebook Mario</a>
+
+    </p> -->
+
+    <div class="mascara-form">
+
+    </div>
+
+</body>
+
+<script>
+
+    let formulario = document.querySelector(".fale-conosco")
+
+    let mascara = document.querySelector(".mascara-form")
+
+    /* criei uma variável formulario que vai receber o form do html, então ele executa assim, vai no hmtl que seria o "document", faz uma seleção pra mim, "querySelector", qual seleção? a " class fale-conosco" */
+
+    function cliqueiNobotao() {
+
+        formulario.style.left = "750px"
+        mascara.style.visibility = "visible"
+
+        /* quando que clicar no botão, o evento onclick chama a função "cliquiNobotao", que por sua vez vai alterar na variavel "formulario" o "estilo" mudando o "left" para 750px positivo, trazendo o form para o centro da tela. */
+        /* a transição do form foi feita no css, na parte da classe fale-conosco, com o atributo transition */
+        /* essa variavel mascara altera o estilo da classe mascara-form, aparecendo aquela mascara negra por baixo do form, quando clicar no botão do fale conosco */
+    }
+
+    function sumirFormulario() {
+
+        formulario.style.left = "-320px"
+        mascara.style.visibility = "hidden"
+
+        /* aqui foi feito a função contrária da de fazer aparecer o formulario, invertendo o left de 750px para
+        -320px, e assim escondendo ele novamente no canto da página. */
+        /* essa variavel mascara altera o estilo da classe mascara-form a visibilidade para escondindo, quando clicar no botão de enviar pedido */
+
+
+    }
+
+</script>
+
+</html>
